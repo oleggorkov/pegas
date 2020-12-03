@@ -1,0 +1,28 @@
+include ../helper-mixins/svg-mix
+
+block mobile-menu
+    div.mobile-menu
+        button(type='button').mobile-menu__close.mobile-toggles
+            +svg-mix('close')
+        ul.mobile-menu__list.mobile-menu__list--main
+            li
+                a(href="#") Главная
+            li
+                a(href="#") услуги
+            li
+                a(href="#") Автопарк
+            li
+                a(href="#") События
+            li
+                a(href="#") О нас
+            li
+                a(href="#") Контакты
+        .mobile-menu__block
+            a(href="#").mobile-menu__btn.mobile-menu__fare узнать тариф
+            a(href="#").mobile-menu__btn.mobile-menu__order сделать заказ
+            .mobile-menu__contacts
+                a(href="tel:+44 20 7719 8816") +44 20 7719 8816
+                p Круглосуточно
+            .mobile-menu__contacts
+                a(href="tel:+44 20 7719 8816") +44 20 7719 8816
+                p Viber & WhatsUp

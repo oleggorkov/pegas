@@ -1,0 +1,357 @@
+.footer {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: url("../img/footer-background.png") center center no-repeat;
+
+  &__container {
+    width: 100%;
+    max-width: 124rem;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 2rem;
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 120rem;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 3.7rem 0 3rem 0;
+
+    @include above($tablet) {
+      padding: 3.7rem 1.5rem 3rem 1.5rem;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include above($tablet) {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    width: calc(100%/4 - 3.5rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    position: relative;
+
+    &:nth-of-type(3) {
+      border-right: 0.1rem solid rgba(255,255,255, 0.5);
+
+      & .footer__item-list {
+        border-right: none;
+      }
+    }
+
+    &:last-of-type {
+      width: 100%;
+      align-items: center;
+
+      @include above($tablet) {
+        width: calc(100%/4 - 3.5rem);
+        align-items: flex-start;
+      }
+    }
+
+    &:not(:last-of-type) {
+      display: none;
+      @include above($tablet) {
+        display: flex;
+      }
+    }
+
+    @include above($desktop) {
+      width: calc(100%/4 - 8rem);
+    }
+
+    &-title {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-transform: uppercase;
+
+      @include above($tablet-landscape) {
+        font-size: 1.9rem;
+      }
+    }
+
+    &-line {
+      width: 6.8rem;
+      height: 0.2rem;
+
+      background-color: $main-yellow;
+
+      margin-top: 1.5rem;
+    }
+
+    &-list {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      border-right: 0.1rem solid rgba(255,255,255, 0.5);
+
+      margin-top: 2.5rem;
+
+      li {
+        white-space: nowrap;
+
+        &:not(:last-of-type) {
+          margin-bottom: 0.8rem;
+        }
+
+        a {
+          color: #ffffff;
+          font-size: 1.2rem;
+          font-weight: 400;
+          opacity: 0.5;
+          transition: opacity .25s;
+
+          @include above($tablet-landscape) {
+            font-size: 1.5rem;
+          }
+
+          &:hover, &:focus {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      width: 27rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: #ffffff;
+      opacity: 0.5;
+      font-size: 1.7rem;
+      font-weight: 700;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.17px;
+      line-height: normal;
+
+      border-bottom: 0.2rem solid rgba(255,255,255, 0.5);
+
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      transition: opacity .25s, border .25s;
+
+      @include above($tablet) {
+        width: 15.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+
+      @include above($tablet-landscape) {
+        width: 18.5rem;
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+      }
+
+      &:hover, &:focus {
+        opacity: 1;
+        border-bottom: 0.2rem solid rgba(255,255,255, 1);
+      }
+    }
+
+    &-contacts {
+      width: 27rem;
+      height: 13.6rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      background: #FFFFFF;
+      opacity: 0.15;
+
+      padding: 1.4rem 1.5rem;
+
+      @include above($tablet) {
+        width: 15.5rem;
+        height: 12rem;
+      }
+
+      @include above($tablet-landscape) {
+        width: 18.5rem;
+        padding: 1.4rem 2rem;
+      }
+
+      &-social {
+        width: 27rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        position: absolute;
+        top: 17rem;
+        padding: 0 1.8rem;
+
+        @include above($tablet) {
+          width: 15.5rem;
+          top: 14.2rem;
+        }
+
+        @include above($tablet-landscape) {
+          width: 18.5rem;
+          top: 16rem;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          transition: opacity .25s;
+
+          &:hover, &:focus {
+            & svg {
+              opacity: 1;
+            }
+          }
+
+          svg {
+            fill: #FFFFFF;
+            opacity: 0.15;
+            stroke: #FFFFFF;
+            width: 3.5rem;
+            height: 3.5rem;
+
+            @include above($tablet) {
+              width: 2rem;
+              height: 2rem;
+            }
+
+            @include above($tablet-landscape) {
+              width: 2.8rem;
+              height: 2.8rem;
+            }
+          }
+        }
+      }
+
+      &-phone {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &:first-of-type {
+          margin-bottom: 0.6rem;
+
+          @include above($tablet) {
+            margin-bottom: 0.3rem;
+          }
+        }
+
+        a {
+          color: #FFFFFF;
+          font-size: 1.7rem;
+          font-weight: 700;
+          font-style: normal;
+          letter-spacing: 0.1rem;
+
+          @include above($tablet) {
+            font-size: 1.3rem;
+          }
+
+          @include above($tablet-landscape) {
+            font-size: 1.7rem;
+          }
+
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+
+        p {
+          color: $helper-gray;
+          font-size: 0.8rem;
+          font-weight: 700;
+          font-style: normal;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+
+          @include above($tablet) {
+            font-size: 0.5rem;
+          }
+
+          @include above($tablet-landscape) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    position: absolute;
+    top: 9.5rem;
+
+    @include above($tablet) {
+      left: 1.5rem;
+      top: 7.7rem;
+    }
+
+    @include above($tablet-landscape) {
+      left: 1.8rem;
+      top: 9.5rem;
+    }
+  }
+
+  &__copyrite {
+    opacity: 0.3;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+
+    margin-top: 2.9rem;
+
+    @include above($tablet) {
+      text-align: left;
+      margin-top: 4.9rem;
+    }
+
+    @include above($tablet-landscape) {
+      font-size: 1.5rem;
+      margin-top: 4.9rem;
+    }
+  }
+}

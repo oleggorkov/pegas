@@ -1,0 +1,52 @@
+.breadcrumbs {
+  width: 100%;
+  max-width: 120rem;
+  height: 3.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 2rem;
+
+  &__list {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      white-space: nowrap;
+      padding-right: 1rem;
+
+      &:not(:first-of-type) {
+        padding-left: 1rem;
+        border-left: 0.2rem solid $main-black;
+      }
+
+      &:last-of-type {
+        border-left:  0.2rem solid $main-yellow;
+
+        a {
+          color: $main-yellow;
+        }
+      }
+
+      a {
+        color: $helper-black;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-style: normal;
+        letter-spacing: 0.63px;
+        line-height: normal;
+
+        &:hover, &:focus {
+          color: $main-yellow;
+        }
+      }
+    }
+  }
+}

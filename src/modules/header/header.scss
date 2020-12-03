@@ -1,0 +1,288 @@
+.header {
+  width: 100%;
+  max-width: 124rem;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 120rem;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    position: relative;
+
+    @include above($tablet) {
+      padding: 0 1.5rem;
+    }
+  }
+
+  &__line {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 2.6rem;
+    width: 45.7%;
+    height: 0.1rem;
+    background-color: $main-yellow;
+
+    @include above($tablet-landscape) {
+      display: block;
+    }
+
+    &:first-child {
+      left: 0;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.6rem 0;
+
+    @include above($tablet) {
+      align-items: normal;
+    }
+  }
+
+  &__mobile-toggle {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    background: transparent;
+
+    border: none;
+
+    @include above($tablet) {
+      display: none;
+    }
+
+    &:focus {
+      &:after, &:before, & span {
+        background: $main-black;
+      }
+    }
+
+    &:after, &:before {
+      width: 3.5rem;
+      height: 0.7rem;
+
+      content: '';
+
+      display: block;
+      position: absolute;
+
+      background: $main-yellow;
+    }
+
+    &:after {
+      top: 0;
+    }
+
+    &:before {
+      bottom: 0;
+    }
+
+    span {
+      width: 3.5rem;
+      height: 0.7rem;
+
+      background: $main-yellow;
+    }
+  }
+
+  &__block {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+
+    @include above($tablet) {
+      display: flex;
+    }
+
+    @include above($tablet-landscape) {
+      flex-direction: row;
+      align-self: flex-end;
+    }
+
+    @include above($desktop) {
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    @include above($tablet) {
+      width: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+
+    &:first-of-type {
+      margin-bottom: 0.5rem;
+
+      @include above($tablet-landscape) {
+        margin-right: 3.6rem;
+        margin-bottom: 0;
+      }
+
+      @include above($desktop) {
+        margin-right: 7.6rem;
+      }
+    }
+
+    a {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $main-black;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+
+      @include above($desktop) {
+        font-size: 1.7rem;
+      }
+    }
+
+    p {
+      font-size: 0.6rem;
+      font-weight: 500;
+      font-style: normal;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 0.63px;
+      color: $main-yellow;
+
+      margin-top: 0.5rem;
+
+      @include above($desktop) {
+        font-size: 1rem;
+      }
+    }
+
+    span {
+      width: 3.9rem;
+      height: 0.1rem;
+
+      position: absolute;
+      bottom: 0.3rem;
+      right: 0;
+
+      background: $main-yellow;
+
+      @include above($desktop) {
+        bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__btn {
+    width: 13rem;
+    height: 2.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    line-height: normal;
+    white-space: nowrap;
+
+    @include above($desktop) {
+      width: 18.6rem;
+      height: 3rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__fare {
+    border: 0.1rem solid $main-black;
+    background: #FFFFFF;
+    color: $main-black;
+
+    margin-bottom: 0.5rem;
+
+    @include above($tablet-landscape) {
+      margin-right: 2.5rem;
+    }
+
+    &:hover, &:focus {
+      color: #FFFFFF;
+      background: $main-yellow;
+      border: 0.1rem solid transparent;
+    }
+  }
+
+  &__order {
+    border: 0.1rem solid transparent;
+    background: $main-yellow;
+    color: #FFFFFF;
+
+    &:hover, &:focus {
+      color: $main-yellow;
+      background: #FFFFFF;
+      border: 0.1rem solid $main-black;
+    }
+  }
+}
